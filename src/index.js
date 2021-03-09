@@ -1,5 +1,5 @@
-import EtVerifyCode from './components/input/formView.vue'
+import FormView from './components/input/formView.vue'
 
-EtVerifyCode.install = Vue => Vue.component(EtVerifyCode.name, EtVerifyCode)
+FormView.install = Vue => Vue.component(FormView.name, FormView)
 
-export default EtVerifyCode
+export default FormView

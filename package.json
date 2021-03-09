@@ -1,0 +1,41 @@
+{
+  "name": "aehyok-form",
+  "version": "1.0.15",
+  "main": "lib/aehyok-form.umd.min.js",
+  "author": "aehyok@163.com",
+  "description": "A vue component for dynamic Form",
+  "keywords": [
+    "vue",
+    "et",
+    "element Form",
+    "dynamic Form",
+    "Form Create"
+  ],
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name aehyok-form --dest dist ./src/index.js",
+    "lib": "vue-cli-service build --target lib --name aehyok-form --dest lib ./src/index.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.4.0",
+    "@vue/cli-plugin-eslint": "^4.4.0",
+    "@vue/cli-service": "^4.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aehyok/aehyok-ele-form.git"
+  },
+  "license": "MIT"
+}

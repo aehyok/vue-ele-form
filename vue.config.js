@@ -8,8 +8,8 @@ module.exports = {
   // // outputDir: path.resolve(__dirname, './dist'),
   // configureWebpack: {
   //   output: {
-  //     filename: 'et-verify-code.min.js',
-  //     library: 'et-verify-code',
+  //     filename: 'aehyok-form.min.js',
+  //     library: 'aehyok-form',
   //     libraryTarget: 'umd',
   //     umdNamedDefine: true
   //   }

@@ -1,6 +1,6 @@
 {
   "name": "aehyok-form",
-  "version": "1.0.17",
+  "version": "1.0.21",
   "main": "lib/aehyok-form.umd.min.js",
   "author": "aehyok@163.com",
   "description": "A vue component for dynamic Form",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aehyok/aehyok-ele-form.git"
+    "url": "https://github.com/aehyok/vue-ele-form.git"
   },
   "license": "MIT"
 }

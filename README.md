@@ -1,8 +1,5 @@
-# et-verify-code
+# aehyok-form
 A vue component for dynamic form create.
-
-# show
-![show](https://i.ibb.co/G5RQBgF/bandicam-2020-06-22-15-00-00-810.gif)
 
 # install
 ```

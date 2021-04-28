@@ -1,18 +1,29 @@
 <!--radio 单选框-->
 <template>
   <div>
-    <el-form-item :label="column.title" :prop="column.name" :rules="rules">
-      <el-radio-group v-model="value" @change="radioChange">
-        <el-radio v-for="item in list" :label="item.id" :key="item.id">
-          {{ item.text }}
-        </el-radio>
-      </el-radio-group>
-    </el-form-item>
-    <div v-for="(control, index) in column.controls" :key="index">
-      <div v-if="value === control.value">
-        <FormView :columnList="control.showCondition" :formData="formData" />
+    <el-col
+      :span="columnSpan"
+      v-for="(item, index) in columnList"
+      :key="index"
+    >
+      <el-form-item :label="column.title" :prop="column.name" :rules="rules">
+        <el-radio-group v-model="value" @change="radioChange">
+          <el-radio v-for="item in list" :label="item.id" :key="item.id">
+            {{ item.text }}
+          </el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <div v-for="(control, index) in column.controls" :key="index">
+        <div v-if="value === control.value">
+          <FormView 
+            :showRow="showRow"
+            :columnList="control.showCondition" 
+            :formData="formData"
+            :columnSpan="columnSpan"
+          />
+        </div>
       </div>
-    </div>
+    </el-col>
   </div>
 </template>
 <script>
@@ -30,6 +41,10 @@ export default {
     formData: {
       type: [Object],
       default: () => {},
+    },
+    columnSpan: {
+      type: Number,
+      default: 12,
     },
     data: {
       type: Number,

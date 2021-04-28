@@ -13,6 +13,7 @@
           :column="item"
           :formData="formData"
           :data.sync="formData[item.name]"
+          :columnSpan="columnSpan"
         />
         <component
           v-if="item.type.includes('View')"
@@ -20,6 +21,7 @@
           :column="item"
           :formData="formData"
           :data.sync="formData[item.name]"
+          :columnSpan="columnSpan"
         />
       </el-col>
     </el-row>

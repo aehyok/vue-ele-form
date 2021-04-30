@@ -1,58 +1,36 @@
 <template>
-  <div>
-    <el-row :gutter="20">
-      <el-col
-        :span="columnSpan"
-        v-for="(item, index) in columnList"
-        :key="index"
-      >
-        <!--不包含View则是npm组件库中的-->
-        <component
-          v-if="!item.type.includes('View')"
-          :is="item.type + 'View'"
-          :column="item"
-          :formData="formData"
-          :data.sync="formData[item.name]"
-          :columnSpan="columnSpan"
-        />
-        <component
-          v-if="item.type.includes('View')"
-          :is="item.type || registerComponent"
-          :column="item"
-          :formData="formData"
-          :data.sync="formData[item.name]"
-          :columnSpan="columnSpan"
-        />
-      </el-col>
-    </el-row>
-  </div>
+  <el-row :gutter="20">
+    <template
+      v-for="(item, index) in columnList"
+    >
+      <component-view
+        :columnSpan="columnSpan"
+        :column="item"
+        :formData="formData"
+        :key="index+'formView'"
+      />
+        <template v-for="(child) in item.controls ">
+            <template v-if="formData[item.name] === child.value">
+              <template v-for="(childColumn, columnIndex) in child.showCondition">
+                <component-view
+                  :columnSpan="columnSpan"
+                  :column="childColumn"
+                  :formData="formData"
+                  :key="columnIndex+'childColumnView'"
+                />
+              </template>
+            </template>
+        </template>
+    </template>
+  </el-row>
 </template>
 <script>
-import Vue from 'vue'
-import textView from '@/components/input/item/textView'
-import textareaView from '@/components/input/item/textareaView'
-import numberView from '@/components/input/item/numberView'
-import dateView from '@/components/input/item/dateView'
-import switchView from '@/components/input/item/switchView'
-import radioView from '@/components/input/item/radioView'
-import checkboxView from '@/components/input/item/checkboxView'
-import daterangeView from '@/components/input/item/daterangeView'
-import selectView from '@/components/input/item/selectView'
-import imageView from '@/components/input/item/imageView'
+import componentView from './componentView'
 
 export default {
-  name: 'FormView',
+  name: 'formView',
   components: {
-    textView,
-    textareaView,
-    numberView,
-    dateView,
-    daterangeView,
-    switchView,
-    radioView,
-    checkboxView,
-    selectView,
-    imageView,
+    componentView,
   },
   props: {
     columnList: {
@@ -71,19 +49,6 @@ export default {
   created() {
     console.log(this, 'this.formView')
   },
-  filters: {
-    registerComponent(componentName) {
-      console.log(componentName, 'this.componentName')
-      return Vue.extend(componentName.default)
-      // return import(`@/components/input/item/${componentName}.vue`).then(
-      //   component => {
-      //     console.log(component, 'component')
-      //     return Vue.extend(component.default)
-      //   },
-      // )
-    },
-  },
-  methods: {},
 }
 </script>
 <style scoped></style>

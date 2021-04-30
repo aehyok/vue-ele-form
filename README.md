@@ -7,6 +7,8 @@ A vue component for dynamic form create.
 # install
 ```
 npm install aehyok-form -S
+
+安装后根据用法一进行使用，如果有需要自己添加组件也已经预留组件入口
 ```
 
 # use

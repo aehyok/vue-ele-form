@@ -10,7 +10,7 @@
           />
         </el-form>
       </el-col>
-      <el-col :span="12">
+      <el-col :span="12" v-if="show">
         <v-jsoneditor
           v-model="formConfig"
           :options="options"
@@ -59,6 +59,7 @@ export default {
   data () {
     return {
       options: { mode: 'code', mainMenuBar: false },
+      show: true,
       formConfig: {
         cols: 24,
         formListItem: [

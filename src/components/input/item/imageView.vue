@@ -10,6 +10,7 @@
         :limit="limit"
         list-type="picture"
         multiple
+        style="width:100%"
         :accept="accept"
         :file-list="fileList"
         :on-remove="removeSuccess"

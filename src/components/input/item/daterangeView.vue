@@ -3,6 +3,7 @@
   <div>
     <el-form-item :label="column.title" :prop="column.name">
       <el-date-picker
+      style="width:100%"
         v-model="value"
         type="daterange"
         range-separator="至"

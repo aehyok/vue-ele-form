@@ -147,6 +147,7 @@ export default {
 <style scoped lang="scss">
   .uploadClass{
     display: inline-block;
+    width:100%;
     flex:1
   }
 </style>

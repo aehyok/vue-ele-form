@@ -3,6 +3,9 @@
 
  let url ='http://rap2api.taobao.org/app/mock/282580'
  // 内容类型
-export const getContentTypeList = () => {
-  return axios(`${url}/get/contentType`)
+export const getContentTypeList = (type) => {
+  if(!type) {
+    type = 'type'
+  }
+  return axios(`${url}/get/codeTable/${type}`)
 }

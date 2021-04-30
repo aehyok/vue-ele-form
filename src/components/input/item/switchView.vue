@@ -1,6 +1,6 @@
 <!--switch切换本身就有值，可以考虑不进行判断必填项-->
 <template>
-  <el-form-item :label="column.title" :prop="column.name">
+  <el-form-item :label="column.title" :prop="column.name" :rules="rules">
     <el-switch v-model="value"></el-switch>
   </el-form-item>
 </template>
@@ -24,7 +24,14 @@ export default {
   },
   //
   data() {
-    return {}
+    return {
+      rules: [
+        {
+          required: this.column.required,
+          message: '请输入' + this.column.title,
+        },
+      ],
+    }
   },
   computed: {
     value: {

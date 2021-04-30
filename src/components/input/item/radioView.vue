@@ -49,7 +49,8 @@ export default {
     }
   },
   created() {
-    this.getList()
+    let codeTable = this.column.codeTable 
+    this.getList(codeTable)
     console.log(this.column, 'this.radioView')
     console.log(this.column.required, 'required')
   },
@@ -65,8 +66,8 @@ export default {
     },
   },
   methods: {
-    getList() {
-      getContentTypeList().then(res => {
+    getList(codeTable) {
+      getContentTypeList(codeTable).then(res => {
         this.list = res.data
         console.log(res.data, 'getContentTypeList')
       })

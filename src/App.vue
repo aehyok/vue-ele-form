@@ -121,6 +121,7 @@ export default {
           {
             name: 'type',
             type: 'radio',
+            codeTable: 'type',
             title: '栏目类型',
             controls: [
               {
@@ -154,6 +155,7 @@ export default {
           {
             name: 'requireType',
             type: 'radio',
+            codeTable: 'isp',
             title: '图文类型',
             required: true
           },

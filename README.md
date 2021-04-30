@@ -1,8 +1,9 @@
 # aehyok-form
 A vue component for dynamic form create.
-### 本项目适合Vue2 ElementUI下进行使用的，目前基础功能已经具备。
-
-### clone后可以直接   npm install,然后npm  run start 即可开启demo查看。
+ 
+ 本项目适合Vue2 ElementUI下进行使用的，目前基础功能已经具备。
+ 
+ clone后可以直接   npm install,然后npm  run start 即可开启demo查看。
 
 # install
 ```
@@ -12,7 +13,7 @@ npm install aehyok-form -S
 ```
 
 # use
-##### 用法一：
+## 用法一：
 
 ```
 <template>
@@ -195,7 +196,7 @@ export default {
 
 ```
 
-##### 用法二
+## 用法二
 直接clone本仓库，然后将对应文件夹的代码（src/components/input）拷贝到自己的项目中
   ```javascript
     import FormView from './components/input/formView'

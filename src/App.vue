@@ -43,6 +43,7 @@ export default {
   },
   created () {
     console.log(this.$router, 'this.$router', 'form-app')
+
   },
   methods: {
     submitForm () {
@@ -130,6 +131,7 @@ export default {
                   {
                     name: 'show',
                     type: 'radio',
+                    codeTable:[{id:1,text:'China'},{id:2,text:'English'}],
                     title: '测试类型',
                     required: true
                   },

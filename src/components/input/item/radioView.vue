@@ -49,8 +49,14 @@ export default {
     }
   },
   created() {
-    let codeTable = this.column.codeTable 
-    this.getList(codeTable)
+    let codeTable = this.column.codeTable
+    console.log(typeof codeTable, '----codeTable-----') 
+    if(typeof codeTable ===  'object' && codeTable.constructor === Array) {
+      this.list = codeTable
+    } else {
+      this.getList(codeTable)
+    }
+    
     console.log(this.column, 'this.radioView')
     console.log(this.column.required, 'required')
   },

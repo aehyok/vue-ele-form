@@ -13,7 +13,7 @@
   ],
   "private": false,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name aehyok-form --dest dist ./src/index.js",
     "lib": "vue-cli-service build --target lib --name aehyok-form --dest lib ./src/index.js",
     "lint": "vue-cli-service lint"
@@ -21,6 +21,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.1",
+    "v-jsoneditor": "^1.4.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {

@@ -176,6 +176,7 @@ export default {
           {
             name: 'creType',
             type: 'select',
+            multiple: true,
             codeTable: 'politicalstatus',
             title: '证件类型'
           },

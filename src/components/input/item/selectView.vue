@@ -1,7 +1,7 @@
 <!--简单文本框-->
 <template>
   <el-form-item :label="column.title" :prop="column.name" :rules="rules">
-    <el-select v-model="value" placeholder="请选择">
+    <el-select v-model="value"  placeholder="请选择" style="width:100%;">
       <el-option
         v-for="item in list"
         :key="item.id"

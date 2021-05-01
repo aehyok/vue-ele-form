@@ -1,7 +1,13 @@
 import { getContentTypeList } from '@/mock/api'
-export const formItemMixin = {
+export const formItemMixins = {
   created() {
-    this.getList()
+    let codeTable = this.column.codeTable
+    console.log(typeof codeTable, '----codeTable-----') 
+    if(typeof codeTable ===  'object' && codeTable.constructor === Array) {
+      this.list = codeTable
+    } else {
+      this.getList(codeTable)
+    }
   },
   data() {
     return {
@@ -9,18 +15,11 @@ export const formItemMixin = {
     }
   },
   methods: {
-    getList() {
-      const sourceType = this.column.codeTable
-      switch (sourceType) {
-        case 'categoryType':
-          getContentTypeList().then(res => {
-            this.list = res.data
-            console.log(res.data, 'categoryType')
-          })
-          break
-        default:
-          break
-      }
+    getList(type) {
+      getContentTypeList(type).then(res => {
+        this.list = res.data
+        console.log(res.data, 'categoryType')
+      })
     },
   },
 }

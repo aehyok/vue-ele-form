@@ -3,16 +3,17 @@
   <div>
     <el-form-item :label="column.title" :prop="column.columnName">
       <el-checkbox-group v-model="value">
-        <el-checkbox v-for="city in cities" :label="city" :key="city">{{
-          city
+        <el-checkbox v-for="item in list" :label="item.id" :key="item.id">{{
+          item.text
         }}</el-checkbox>
       </el-checkbox-group>
     </el-form-item>
   </div>
 </template>
 <script>
-const cityOptions = ['上海', '北京', '深圳', '广州']
+import { formItemMixins } from './formItemMixins.js'
 export default {
+  mixins: [formItemMixins],
   props: {
     column: {
       type: [Object],
@@ -25,7 +26,7 @@ export default {
   },
   data() {
     return {
-      cities: cityOptions,
+      // list: [],
     }
   },
   computed: {

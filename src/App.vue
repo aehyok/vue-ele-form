@@ -165,6 +165,7 @@ export default {
             name: 'range',
             type: 'checkbox',
             title: '发布范围',
+            codeTable: 'isp',
             required: true
           },
           {
@@ -175,6 +176,7 @@ export default {
           {
             name: 'creType',
             type: 'select',
+            codeTable: 'politicalstatus',
             title: '证件类型'
           },
           {

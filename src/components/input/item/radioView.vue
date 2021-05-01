@@ -11,12 +11,13 @@
   </div>
 </template>
 <script>
-import { getContentTypeList } from '@/mock/api'
+import { formItemMixins } from './formItemMixins.js'
 export default {
   // // 组件嵌套如何引用的问题
   // components: {
   //   FormView: () => import('@/components/input/formView'),
   // },
+  mixins: [formItemMixins],
   props: {
     column: {
       type: [Object],
@@ -37,7 +38,7 @@ export default {
   },
   data() {
     return {
-      list: [],
+      // list: [],
       rules: [
         {
           // 加上双？？，防止出现选中后提示请选择"this.column.title"
@@ -47,18 +48,6 @@ export default {
         },
       ],
     }
-  },
-  created() {
-    let codeTable = this.column.codeTable
-    console.log(typeof codeTable, '----codeTable-----') 
-    if(typeof codeTable ===  'object' && codeTable.constructor === Array) {
-      this.list = codeTable
-    } else {
-      this.getList(codeTable)
-    }
-    
-    console.log(this.column, 'this.radioView')
-    console.log(this.column.required, 'required')
   },
   computed: {
     value: {
@@ -72,12 +61,6 @@ export default {
     },
   },
   methods: {
-    getList(codeTable) {
-      getContentTypeList(codeTable).then(res => {
-        this.list = res.data
-        console.log(res.data, 'getContentTypeList')
-      })
-    },
     // radio change事件去切换控制其他组件，或者其他几个组件（先考虑控制一个）
     // 要通过一个字段控制，如果是这个字段，则可以进行控制切换状态
     radioChange(e) {
